@@ -51,6 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         safeInit("MTN bookmark") { _ = TaskNotesSource.resolveMtnBookmark() }
         safeInit("Global hotkey") { SyncManager.shared.updateHotKey() }
         safeInit("File watcher") { SyncManager.shared.updateFileWatcher() }
+        safeInit("Appearance observer") { SyncManager.shared.setupAppearanceObserver() }
 
         // Request destination access on launch
         Task {

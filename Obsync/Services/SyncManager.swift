@@ -79,7 +79,8 @@ class SyncManager: ObservableObject {
 
         setupAutoSync()
         setupConfigObserver()
-        setupAppearanceObserver()
+        // setupAppearanceObserver() is deferred — NSApp is nil during init().
+        // AppDelegate calls it in applicationDidFinishLaunching.
     }
 
     // MARK: - Source/Destination Factory
@@ -159,8 +160,8 @@ class SyncManager: ObservableObject {
             .store(in: &cancellables)
     }
 
-    private func setupAppearanceObserver() {
-        // Observe system appearance changes to update the dock icon
+    /// Must be called from applicationDidFinishLaunching — NSApp is nil during init().
+    func setupAppearanceObserver() {
         appearanceObservation = NSApp.observe(\.effectiveAppearance) { [weak self] _, _ in
             Task { @MainActor in
                 self?.refreshDockIcon()
