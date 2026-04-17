@@ -1,5 +1,5 @@
 import XCTest
-@testable import Remindian
+@testable import Equil
 
 /// Comprehensive tests for every code path that modifies existing vault files.
 ///

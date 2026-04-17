@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001 /* ObsyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101 /* ObsyncApp.swift */; };
+		001 /* EquilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101 /* EquilApp.swift */; };
 		002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102 /* ContentView.swift */; };
 		003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103 /* SettingsView.swift */; };
 		004 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104 /* MenuBarView.swift */; };
@@ -53,8 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		100 /* Remindian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remindian.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		101 /* ObsyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsyncApp.swift; sourceTree = "<group>"; };
+		100 /* Equil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		101 /* EquilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquilApp.swift; sourceTree = "<group>"; };
 		102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		103 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		104 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
@@ -64,8 +64,7 @@
 		108 /* ObsidianService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianService.swift; sourceTree = "<group>"; };
 		110 /* SyncEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		111 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
-		112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		113 /* Remindian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remindian.entitlements; sourceTree = "<group>"; };
+		113 /* Equil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Equil.entitlements; sourceTree = "<group>"; };
 		114 /* FileBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBackupService.swift; sourceTree = "<group>"; };
 		115 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		116 /* HotKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyService.swift; sourceTree = "<group>"; };
@@ -83,7 +82,7 @@
 		134 /* CalendarFeedDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeedDestination.swift; sourceTree = "<group>"; };
 		42341E212F92A4270045886E /* ObsidianTasksSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianTasksSource.swift; sourceTree = "<group>"; };
 		42341E292F92B1B10045886E /* GlassEffect+Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlassEffect+Compat.swift"; sourceTree = "<group>"; };
-		T00 /* RemindianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		T00 /* EquilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EquilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		T10 /* TaskParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskParserTests.swift; sourceTree = "<group>"; };
 		T11 /* DeduplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeduplicationTests.swift; sourceTree = "<group>"; };
 		T12 /* TaskNotesParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotesParserTests.swift; sourceTree = "<group>"; };
@@ -113,33 +112,32 @@
 		300 = {
 			isa = PBXGroup;
 			children = (
-				301 /* Obsync */,
-				309 /* RemindianTests */,
+				301 /* Equil */,
+				309 /* EquilTests */,
 				302 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		301 /* Obsync */ = {
+		301 /* Equil */ = {
 			isa = PBXGroup;
 			children = (
 				42341E2A2F92B1B10045886E /* Extensions */,
-				101 /* ObsyncApp.swift */,
+				101 /* EquilApp.swift */,
 				303 /* Views */,
 				304 /* Models */,
 				305 /* Services */,
 				306 /* Protocols */,
 				120 /* Assets.xcassets */,
-				112 /* Info.plist */,
-				113 /* Remindian.entitlements */,
+				113 /* Equil.entitlements */,
 			);
-			path = Obsync;
+			path = Equil;
 			sourceTree = "<group>";
 		};
 		302 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				100 /* Remindian.app */,
-				T00 /* RemindianTests.xctest */,
+				100 /* Equil.app */,
+				T00 /* EquilTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,7 +210,7 @@
 			path = Destinations;
 			sourceTree = "<group>";
 		};
-		309 /* RemindianTests */ = {
+		309 /* EquilTests */ = {
 			isa = PBXGroup;
 			children = (
 				T10 /* TaskParserTests.swift */,
@@ -222,7 +220,7 @@
 				T14 /* PersistenceTests.swift */,
 				T15 /* WritebackTests.swift */,
 			);
-			path = RemindianTests;
+			path = EquilTests;
 			sourceTree = "<group>";
 		};
 		42341E2A2F92B1B10045886E /* Extensions */ = {
@@ -236,9 +234,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		400 /* Remindian */ = {
+		400 /* Equil */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 500 /* Build configuration list for PBXNativeTarget "Remindian" */;
+			buildConfigurationList = 500 /* Build configuration list for PBXNativeTarget "Equil" */;
 			buildPhases = (
 				401 /* Sources */,
 				200 /* Frameworks */,
@@ -248,14 +246,14 @@
 			);
 			dependencies = (
 			);
-			name = Remindian;
+			name = Equil;
 			productName = Remindian;
-			productReference = 100 /* Remindian.app */;
+			productReference = 100 /* Equil.app */;
 			productType = "com.apple.product-type.application";
 		};
-		T40 /* RemindianTests */ = {
+		T40 /* EquilTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = T50 /* Build configuration list for PBXNativeTarget "RemindianTests" */;
+			buildConfigurationList = T50 /* Build configuration list for PBXNativeTarget "EquilTests" */;
 			buildPhases = (
 				T41 /* Sources */,
 				T30 /* Frameworks */,
@@ -265,9 +263,9 @@
 			dependencies = (
 				T21 /* PBXTargetDependency */,
 			);
-			name = RemindianTests;
+			name = EquilTests;
 			productName = RemindianTests;
-			productReference = T00 /* RemindianTests.xctest */;
+			productReference = T00 /* EquilTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -289,8 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 601 /* Build configuration list for PBXProject "ObsidianRemindersSync" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 601 /* Build configuration list for PBXProject "Equil" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -298,12 +295,13 @@
 				Base,
 			);
 			mainGroup = 300;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 302 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				400 /* Remindian */,
-				T40 /* RemindianTests */,
+				400 /* Equil */,
+				T40 /* EquilTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001 /* ObsyncApp.swift in Sources */,
+				001 /* EquilApp.swift in Sources */,
 				002 /* ContentView.swift in Sources */,
 				003 /* SettingsView.swift in Sources */,
 				004 /* MenuBarView.swift in Sources */,
@@ -371,7 +369,7 @@
 /* Begin PBXTargetDependency section */
 		T21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 400 /* Remindian */;
+			target = 400 /* Equil */;
 			targetProxy = T20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -384,7 +382,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -410,13 +408,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -431,7 +429,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -448,7 +446,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -474,13 +472,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -489,9 +487,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -502,24 +501,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Obsync/Remindian.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Equil/Equil.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Obsync/Info.plist;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Equil;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSRemindersUsageDescription = "Remindian needs access to Reminders to sync your tasks with Obsidian.";
+				INFOPLIST_KEY_LSUIElement = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Zhengdai. All rights reserved.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Remindian needs access to Reminders to sync your tasks from Obsidian or TaskNotes.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 5.6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.app;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zdproject.Equil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -531,24 +533,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Obsync/Remindian.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Equil/Equil.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Obsync/Info.plist;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Equil;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSRemindersUsageDescription = "Remindian needs access to Reminders to sync your tasks with Obsidian.";
+				INFOPLIST_KEY_LSUIElement = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Zhengdai. All rights reserved.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Remindian needs access to Reminders to sync your tasks from Obsidian or TaskNotes.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 5.6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.app;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zdproject.Equil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -560,15 +565,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = "";
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.tests;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zdproject.Equil.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remindian.app/Contents/MacOS/Remindian";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equil.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Equil";
 			};
 			name = Debug;
 		};
@@ -577,22 +582,22 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = "";
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.tests;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zdproject.Equil.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remindian.app/Contents/MacOS/Remindian";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equil.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Equil";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		500 /* Build configuration list for PBXNativeTarget "Remindian" */ = {
+		500 /* Build configuration list for PBXNativeTarget "Equil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				702 /* Debug */,
@@ -601,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		601 /* Build configuration list for PBXProject "ObsidianRemindersSync" */ = {
+		601 /* Build configuration list for PBXProject "Equil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				700 /* Debug */,
@@ -610,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		T50 /* Build configuration list for PBXNativeTarget "RemindianTests" */ = {
+		T50 /* Build configuration list for PBXNativeTarget "EquilTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				T70 /* Debug */,

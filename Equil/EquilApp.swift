@@ -3,7 +3,7 @@ import EventKit
 import ServiceManagement
 
 @main
-struct RemindianApp: App {
+struct EquilApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var syncManager = SyncManager.shared
 

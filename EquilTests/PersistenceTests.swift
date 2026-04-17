@@ -1,5 +1,5 @@
 import XCTest
-@testable import Remindian
+@testable import Equil
 
 final class PersistenceTests: XCTestCase {
 
