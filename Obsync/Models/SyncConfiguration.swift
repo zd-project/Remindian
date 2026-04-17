@@ -133,21 +133,11 @@ class SyncConfiguration: ObservableObject, Codable {
 
     enum TaskDestinationType: String, Codable, CaseIterable {
         case appleReminders = "appleReminders"
-        case things3 = "things3"
-        case todoist = "todoist"
-        case tickTick = "tickTick"
-        case asana = "asana"
-        case linear = "linear"
         case calendarFeed = "calendarFeed"
 
         var displayName: String {
             switch self {
             case .appleReminders: return "Apple Reminders"
-            case .things3: return "Things 3"
-            case .todoist: return "Todoist"
-            case .tickTick: return "TickTick"
-            case .asana: return "Asana"
-            case .linear: return "Linear"
             case .calendarFeed: return "Calendar Feed (.ics)"
             }
         }

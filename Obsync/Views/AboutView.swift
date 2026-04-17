@@ -7,8 +7,6 @@ struct AboutView: View {
     private let githubURL = "https://github.com/Santofer/Remindian"
     private let buyMeCoffeeURL = "https://buymeacoffee.com/santofer"
 
-    @StateObject private var updater = UpdaterService.shared
-
     var body: some View {
         VStack(spacing: 16) {
             // App icon
@@ -66,81 +64,6 @@ struct AboutView: View {
 
             Divider()
                 .frame(width: 240)
-
-            // Update section
-            if updater.updateAvailable {
-                VStack(spacing: 6) {
-                    HStack(spacing: 4) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .foregroundColor(.blue)
-                        Text("Update available: \(updater.latestVersion)")
-                            .fontWeight(.medium)
-                    }
-                    .font(.callout)
-
-                    Button(action: {
-                        updater.downloadUpdate()
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.down.circle.fill")
-                            Text("Download Update")
-                        }
-                        .frame(width: 200)
-                    }
-                    .buttonStyle(.borderedProminent)
-
-                    Button(action: {
-                        updater.openReleasePage()
-                    }) {
-                        Text("View Release Notes")
-                            .font(.caption)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(.accentColor)
-                }
-            } else {
-                Button(action: {
-                    Task { await updater.checkForUpdates(silent: false) }
-                }) {
-                    HStack {
-                        if updater.isChecking {
-                            ProgressView()
-                                .controlSize(.small)
-                                .padding(.trailing, 2)
-                        } else {
-                            Image(systemName: "arrow.triangle.2.circlepath")
-                        }
-                        Text(updater.isChecking ? "Checking..." : "Check for Updates")
-                    }
-                    .frame(width: 200)
-                }
-                .buttonStyle(.bordered)
-                .disabled(updater.isChecking)
-
-                if updater.upToDate {
-                    HStack(spacing: 4) {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                            .font(.caption)
-                        Text("You're up to date!")
-                            .fontWeight(.medium)
-                    }
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                } else if let lastCheck = updater.lastCheckDate {
-                    Text("Last checked: \(lastCheck, style: .relative) ago")
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
-            }
-
-            if let error = updater.errorMessage {
-                Text(error)
-                    .font(.caption2)
-                    .foregroundColor(.red)
-                    .multilineTextAlignment(.center)
-                    .frame(width: 260)
-            }
 
             // Action buttons
             VStack(spacing: 10) {

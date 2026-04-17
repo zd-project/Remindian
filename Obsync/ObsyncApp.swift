@@ -11,9 +11,6 @@ struct RemindianApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(syncManager)
-                .onOpenURL { url in
-                    OAuthCallbackHandler.shared.handle(url: url)
-                }
         }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
@@ -26,9 +23,6 @@ struct RemindianApp: App {
         MenuBarExtra {
             MenuBarView()
                 .environmentObject(syncManager)
-                .onOpenURL { url in
-                    OAuthCallbackHandler.shared.handle(url: url)
-                }
         } label: {
             let symbolName = syncManager.isSyncing
                 ? "arrow.triangle.2.circlepath.circle.fill"
@@ -57,7 +51,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         safeInit("MTN bookmark") { _ = TaskNotesSource.resolveMtnBookmark() }
         safeInit("Global hotkey") { SyncManager.shared.updateHotKey() }
         safeInit("File watcher") { SyncManager.shared.updateFileWatcher() }
-        safeInit("Auto-updater") { _ = UpdaterService.shared }
 
         // Request destination access on launch
         Task {

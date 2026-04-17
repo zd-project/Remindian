@@ -67,14 +67,6 @@ struct OnboardingView: View {
             .padding(20)
         }
         .frame(width: 500, height: 400)
-        .onReceive(OAuthCallbackHandler.shared.$tickTickAuthCode.compactMap { $0 }) { _ in
-            // When TickTick OAuth completes, the token exchange happens in SyncManager.
-            // Re-check access after a short delay to let the token exchange finish.
-            Task {
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
-                await syncManager.requestDestinationAccess()
-            }
-        }
     }
 
     // MARK: - Steps
@@ -153,50 +145,6 @@ struct OnboardingView: View {
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .padding(.horizontal, 4)
-
-                    if syncManager.config.taskDestinationType == .things3 {
-                        HStack {
-                            Text("Auth Token:")
-                                .font(.caption)
-                            SecureField("From Things Settings", text: $syncManager.config.things3AuthToken)
-                                .textFieldStyle(.roundedBorder)
-                                .font(.system(size: 12))
-                        }
-                        .padding(.horizontal, 4)
-                    }
-
-                    if syncManager.config.taskDestinationType == .todoist {
-                        HStack {
-                            Text("API Token:")
-                                .font(.caption)
-                            SecureField("From Todoist Settings", text: $syncManager.config.todoistApiToken)
-                                .textFieldStyle(.roundedBorder)
-                                .font(.system(size: 12))
-                        }
-                        .padding(.horizontal, 4)
-                    }
-
-                    if syncManager.config.taskDestinationType == .asana {
-                        HStack {
-                            Text("API Token:")
-                                .font(.caption)
-                            SecureField("Personal Access Token", text: $syncManager.config.asanaApiToken)
-                                .textFieldStyle(.roundedBorder)
-                                .font(.system(size: 12))
-                        }
-                        .padding(.horizontal, 4)
-                    }
-
-                    if syncManager.config.taskDestinationType == .linear {
-                        HStack {
-                            Text("API Key:")
-                                .font(.caption)
-                            SecureField("Personal API Key", text: $syncManager.config.linearApiKey)
-                                .textFieldStyle(.roundedBorder)
-                                .font(.system(size: 12))
-                        }
-                        .padding(.horizontal, 4)
-                    }
 
                     if syncManager.config.taskDestinationType == .calendarFeed {
                         HStack {
@@ -282,36 +230,6 @@ struct OnboardingView: View {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
                     Text("Access granted")
-                }
-            } else if syncManager.config.taskDestinationType == .tickTick {
-                if syncManager.config.tickTickAccessToken.isEmpty {
-                    Button("Connect TickTick") {
-                        syncManager.connectTickTick()
-                    }
-                    .buttonStyle(.borderedProminent)
-                } else {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                        Text("Connected to TickTick")
-                    }
-                }
-            } else if syncManager.config.taskDestinationType == .things3 {
-                VStack(spacing: 8) {
-                    Button(isRequestingAccess ? "Requesting..." : "Grant Access") {
-                        isRequestingAccess = true
-                        Task {
-                            await syncManager.requestDestinationAccess()
-                            isRequestingAccess = false
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(isRequestingAccess)
-
-                    Button("Open System Settings") {
-                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")!)
-                    }
-                    .font(.caption)
                 }
             } else {
                 Button(isRequestingAccess ? "Requesting..." : "Grant Access") {
@@ -476,11 +394,6 @@ struct OnboardingView: View {
     private var destinationDescription: String {
         switch syncManager.config.taskDestinationType {
         case .appleReminders: return "Syncs to Apple Reminders via EventKit"
-        case .things3: return "Syncs to Things 3 via AppleScript + URL scheme"
-        case .todoist: return "Syncs to Todoist via the REST API"
-        case .tickTick: return "Syncs to TickTick via OAuth + REST API"
-        case .asana: return "Syncs to Asana tasks via the REST API"
-        case .linear: return "Syncs to Linear issues via the GraphQL API"
         case .calendarFeed: return "Generates a subscribable .ics calendar file"
         }
     }

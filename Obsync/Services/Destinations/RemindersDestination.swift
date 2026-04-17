@@ -210,3 +210,31 @@ struct EventKitSyncError: LocalizedError {
         return EventKitSyncError(underlyingError: error, userMessage: userMessage)
     }
 }
+
+// MARK: - Errors
+
+enum RemindersError: LocalizedError {
+    case accessDenied
+    case noSourceAvailable
+    case fetchFailed
+    case reminderNotFound(String)
+    case listNotFound(String)
+    case saveFailed(Error)
+    
+    var errorDescription: String? {
+        switch self {
+        case .accessDenied:
+            return "Access to Reminders was denied. Please grant access in System Settings > Privacy & Security > Reminders."
+        case .noSourceAvailable:
+            return "No source available to create reminder lists."
+        case .fetchFailed:
+            return "Failed to fetch reminders."
+        case .reminderNotFound(let id):
+            return "Reminder not found with ID: \(id)"
+        case .listNotFound(let name):
+            return "Reminder list not found: \(name)"
+        case .saveFailed(let error):
+            return "Failed to save reminder: \(error.localizedDescription)"
+        }
+    }
+}

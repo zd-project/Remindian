@@ -365,20 +365,7 @@ struct PermissionRequestView: View {
                 .foregroundColor(.secondary)
                 .frame(maxWidth: 400)
 
-            if destinationType == .tickTick {
-                if syncManager.config.tickTickAccessToken.isEmpty {
-                    Button("Connect TickTick") {
-                        syncManager.connectTickTick()
-                    }
-                    .buttonStyle(.borderedProminent)
-                } else {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                        Text("Connected to TickTick")
-                    }
-                }
-            } else if needsSettingsButton {
+            if needsSettingsButton {
                 Button("Open Settings") {
                     openNativeSettingsWindow()
                 }
@@ -391,13 +378,6 @@ struct PermissionRequestView: View {
                         }
                     }
                     .buttonStyle(.borderedProminent)
-
-                    if destinationType == .things3 {
-                        Button("Open System Settings") {
-                            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")!)
-                        }
-                        .font(.caption)
-                    }
                 }
             }
 
@@ -413,11 +393,6 @@ struct PermissionRequestView: View {
     private var iconName: String {
         switch destinationType {
         case .appleReminders: return "checklist"
-        case .things3: return "checklist"
-        case .todoist: return "key.fill"
-        case .tickTick: return "link.circle"
-        case .asana: return "key.fill"
-        case .linear: return "key.fill"
         case .calendarFeed: return "calendar.badge.plus"
         }
     }
@@ -425,11 +400,6 @@ struct PermissionRequestView: View {
     private var titleText: String {
         switch destinationType {
         case .appleReminders: return "Reminders Access Required"
-        case .things3: return "Things 3 Access Required"
-        case .todoist: return "Todoist Configuration Needed"
-        case .tickTick: return "TickTick Connection Needed"
-        case .asana: return "Asana Configuration Needed"
-        case .linear: return "Linear Configuration Needed"
         case .calendarFeed: return "Calendar Feed Configuration Needed"
         }
     }
@@ -438,16 +408,6 @@ struct PermissionRequestView: View {
         switch destinationType {
         case .appleReminders:
             return "This app needs access to your Reminders to sync tasks with Obsidian."
-        case .things3:
-            return "Things 3 needs to be installed and running. Grant automation access when prompted."
-        case .todoist:
-            return "Enter your Todoist API token in Settings > General to start syncing. You can find your token in Todoist > Settings > Integrations > Developer."
-        case .tickTick:
-            return "Click \"Connect TickTick\" in Settings > General to authorize Remindian via OAuth."
-        case .asana:
-            return "Enter your Asana Personal Access Token in Settings > General. Get it from Asana > My Settings > Apps > Developer Apps."
-        case .linear:
-            return "Enter your Linear API key in Settings > General. Get it from Linear > Settings > API > Personal API Keys."
         case .calendarFeed:
             return "Set the output path for your .ics file in Settings > General. The file will be generated on each sync."
         }
@@ -457,16 +417,6 @@ struct PermissionRequestView: View {
         switch destinationType {
         case .appleReminders:
             return "You can also grant access in System Settings \u{2192} Privacy & Security \u{2192} Reminders"
-        case .things3:
-            return "You can manage automation permissions in System Settings \u{2192} Privacy & Security \u{2192} Automation"
-        case .todoist:
-            return "Your token is stored locally and never shared"
-        case .tickTick:
-            return "OAuth tokens are stored locally and refresh automatically"
-        case .asana:
-            return "Your token is stored locally and never shared"
-        case .linear:
-            return "Your API key is stored locally and never shared"
         case .calendarFeed:
             return "Subscribe to the .ics file from Apple Calendar, Google Calendar, or any CalDAV client"
         }
@@ -474,9 +424,9 @@ struct PermissionRequestView: View {
 
     private var needsSettingsButton: Bool {
         switch destinationType {
-        case .appleReminders, .things3, .tickTick:
+        case .appleReminders:
             return false
-        case .todoist, .asana, .linear, .calendarFeed:
+        case .calendarFeed:
             return true
         }
     }
@@ -786,3 +736,4 @@ struct EmptyConflictsView: View {
     ContentView()
         .environmentObject(SyncManager.shared)
 }
+

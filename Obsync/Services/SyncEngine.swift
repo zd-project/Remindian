@@ -1015,42 +1015,7 @@ class SyncEngine {
             return
         }
 
-        // Try batch creation for Things 3
-        if let things3 = destination as? Things3Destination {
-            let batchSize = 20
-            for batchStart in stride(from: 0, to: tasks.count, by: batchSize) {
-                if isCancelled { break }
-                let batchEnd = min(batchStart + batchSize, tasks.count)
-                let batch = Array(tasks[batchStart..<batchEnd])
-                let batchInput = batch.map { (task: $0.task, listName: $0.listName) }
-
-                do {
-                    let ids = try await things3.createTasksBatch(tasks: batchInput, config: config)
-                    for (i, item) in batch.enumerated() {
-                        let hash = SyncState.generateTaskHash(item.task)
-                        syncState.addOrUpdateMapping(
-                            obsidianId: item.obsidianId,
-                            remindersId: ids[i],
-                            obsidianHash: hash,
-                            remindersHash: hash
-                        )
-                        result.created += 1
-                        result.details.append(SyncLogDetail(
-                            action: .created,
-                            taskTitle: item.task.title,
-                            filePath: item.task.obsidianSource?.filePath,
-                            errorMessage: nil
-                        ))
-                    }
-                    debugLog("[SyncEngine] Batch created \(batch.count) tasks in Things 3")
-                } catch {
-                    debugLog("[SyncEngine] Batch create failed, falling back to individual: \(error.localizedDescription)")
-                    await createTasksSequentially(tasks: batch, config: config, result: &result)
-                }
-            }
-        } else {
-            await createTasksSequentially(tasks: tasks, config: config, result: &result)
-        }
+        await createTasksSequentially(tasks: tasks, config: config, result: &result)
     }
 
     /// Create tasks one at a time (fallback for non-Things 3 destinations or batch failure).

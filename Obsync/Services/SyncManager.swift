@@ -80,7 +80,6 @@ class SyncManager: ObservableObject {
         setupAutoSync()
         setupConfigObserver()
         setupAppearanceObserver()
-        setupOAuthObserver()
     }
 
     // MARK: - Source/Destination Factory
@@ -113,28 +112,6 @@ class SyncManager: ObservableObject {
         switch type {
         case .appleReminders:
             return RemindersDestination()
-        case .things3:
-            let destination = Things3Destination()
-            destination.authToken = config.things3AuthToken
-            return destination
-        case .todoist:
-            let destination = TodoistDestination()
-            destination.apiToken = config.todoistApiToken
-            return destination
-        case .tickTick:
-            let destination = TickTickDestination()
-            destination.accessToken = config.tickTickAccessToken
-            destination.refreshToken = config.tickTickRefreshToken
-            destination.tokenExpiry = config.tickTickTokenExpiry
-            return destination
-        case .asana:
-            let destination = AsanaDestination()
-            destination.apiToken = config.asanaApiToken
-            return destination
-        case .linear:
-            let destination = LinearDestination()
-            destination.apiKey = config.linearApiKey
-            return destination
         case .calendarFeed:
             let destination = CalendarFeedDestination()
             destination.outputPath = config.calendarFeedOutputPath
@@ -182,15 +159,6 @@ class SyncManager: ObservableObject {
             .store(in: &cancellables)
     }
 
-    private func setupOAuthObserver() {
-        OAuthCallbackHandler.shared.$tickTickAuthCode
-            .compactMap { $0 }
-            .sink { [weak self] code in
-                self?.handleTickTickOAuthCode(code)
-            }
-            .store(in: &cancellables)
-    }
-
     private func setupAppearanceObserver() {
         // Observe system appearance changes to update the dock icon
         appearanceObservation = NSApp.observe(\.effectiveAppearance) { [weak self] _, _ in
@@ -228,11 +196,7 @@ class SyncManager: ObservableObject {
         } catch {
             hasDestinationAccess = false
             debugLog("[SyncManager] \(taskDestination.destinationName) access failed: \(error.localizedDescription)")
-            // Don't show scary error for token-based destinations that just need configuration
-            let isTokenBased = config.taskDestinationType == .todoist || config.taskDestinationType == .tickTick
-            if !isTokenBased {
-                showErrorMessage("Failed to get \(taskDestination.destinationName) access: \(error.localizedDescription)")
-            }
+            showErrorMessage("Failed to get \(taskDestination.destinationName) access: \(error.localizedDescription)")
         }
     }
 
@@ -627,60 +591,7 @@ class SyncManager: ObservableObject {
             }
         }
     }
-
-    // MARK: - TickTick OAuth
-
-    /// Initiate the TickTick OAuth flow by opening the browser.
-    func connectTickTick() {
-        guard let destination = taskDestination as? TickTickDestination else {
-            // Create a temporary destination to start the flow
-            let tmp = TickTickDestination()
-            tmp.startOAuthFlow()
-            return
-        }
-        destination.startOAuthFlow()
-    }
-
-    /// Exchange a TickTick OAuth authorization code for tokens.
-    func handleTickTickOAuthCode(_ code: String) {
-        Task {
-            do {
-                let destination: TickTickDestination
-                if let existing = taskDestination as? TickTickDestination {
-                    destination = existing
-                } else {
-                    destination = TickTickDestination()
-                }
-                try await destination.exchangeCodeForToken(code)
-
-                // Store tokens in config
-                config.tickTickAccessToken = destination.accessToken
-                config.tickTickRefreshToken = destination.refreshToken
-                config.tickTickTokenExpiry = destination.tokenExpiry
-                config.save()
-
-                // Recreate destination with new tokens
-                updateSourceAndDestination()
-                refreshLists()
-
-                debugLog("[SyncManager] TickTick connected successfully")
-            } catch {
-                showErrorMessage("TickTick connection failed: \(error.localizedDescription)")
-                debugLog("[SyncManager] TickTick OAuth error: \(error)")
-            }
-        }
-    }
-
-    /// Disconnect TickTick by clearing stored tokens.
-    func disconnectTickTick() {
-        config.tickTickAccessToken = ""
-        config.tickTickRefreshToken = ""
-        config.tickTickTokenExpiry = nil
-        config.save()
-        updateSourceAndDestination()
-        debugLog("[SyncManager] TickTick disconnected")
-    }
-
+    
     func resetSyncState() {
         syncEngine.resetSyncState()
         lastSyncResult = nil

@@ -3,50 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001 /* ObsyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101; };
-		002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102; };
-		003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103; };
-		004 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104; };
-		005 /* SyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105; };
-		006 /* SyncConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106; };
-		007 /* SyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107; };
-		008 /* ObsidianService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108; };
-		009 /* RemindersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109; };
-		010 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110; };
-		011 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111; };
-		012 /* FileBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114; };
-		013 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115; };
-		014 /* HotKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116; };
-		015 /* AuditLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117; };
-		016 /* SyncLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118; };
-		017 /* SyncHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119; };
-		018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120; };
-		019 /* FileWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121; };
-		020 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122; };
-		021 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123; };
-		022 /* TaskSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124; };
-		023 /* TaskDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125; };
-		024 /* ObsidianTasksSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126; };
-		025 /* TaskNotesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127; };
-		026 /* RemindersDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128; };
-		027 /* Things3Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129; };
-		028 /* UpdaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130; };
-		029 /* TodoistDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131; };
-		030 /* TickTickDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132; };
-		031 /* OAuthCallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133; };
-		032 /* CalendarFeedDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134; };
-		033 /* AsanaDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135; };
-		034 /* LinearDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136; };
-		T01 /* TaskParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T10; };
-		T02 /* DeduplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T11; };
-		T03 /* TaskNotesParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T12; };
-		T04 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T13; };
-		T05 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T14; };
-		T06 /* WritebackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T15; };
+		001 /* ObsyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101 /* ObsyncApp.swift */; };
+		002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102 /* ContentView.swift */; };
+		003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103 /* SettingsView.swift */; };
+		004 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104 /* MenuBarView.swift */; };
+		005 /* SyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105 /* SyncTask.swift */; };
+		006 /* SyncConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106 /* SyncConfiguration.swift */; };
+		007 /* SyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107 /* SyncState.swift */; };
+		008 /* ObsidianService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108 /* ObsidianService.swift */; };
+		010 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110 /* SyncEngine.swift */; };
+		011 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111 /* SyncManager.swift */; };
+		012 /* FileBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114 /* FileBackupService.swift */; };
+		013 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115 /* NotificationService.swift */; };
+		014 /* HotKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116 /* HotKeyService.swift */; };
+		015 /* AuditLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117 /* AuditLog.swift */; };
+		016 /* SyncLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118 /* SyncLog.swift */; };
+		017 /* SyncHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119 /* SyncHistoryView.swift */; };
+		018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120 /* Assets.xcassets */; };
+		019 /* FileWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121 /* FileWatcherService.swift */; };
+		020 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122 /* OnboardingView.swift */; };
+		021 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123 /* AboutView.swift */; };
+		022 /* TaskSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124 /* TaskSource.swift */; };
+		023 /* TaskDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125 /* TaskDestination.swift */; };
+		025 /* TaskNotesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127 /* TaskNotesSource.swift */; };
+		026 /* RemindersDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128 /* RemindersDestination.swift */; };
+		032 /* CalendarFeedDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134 /* CalendarFeedDestination.swift */; };
+		42341E222F92A4270045886E /* ObsidianTasksSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341E212F92A4270045886E /* ObsidianTasksSource.swift */; };
+		T01 /* TaskParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T10 /* TaskParserTests.swift */; };
+		T02 /* DeduplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T11 /* DeduplicationTests.swift */; };
+		T03 /* TaskNotesParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T12 /* TaskNotesParserTests.swift */; };
+		T04 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T13 /* ConfigurationTests.swift */; };
+		T05 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T14 /* PersistenceTests.swift */; };
+		T06 /* WritebackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T15 /* WritebackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +61,6 @@
 		106 /* SyncConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncConfiguration.swift; sourceTree = "<group>"; };
 		107 /* SyncState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncState.swift; sourceTree = "<group>"; };
 		108 /* ObsidianService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianService.swift; sourceTree = "<group>"; };
-		109 /* RemindersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersService.swift; sourceTree = "<group>"; };
 		110 /* SyncEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		111 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,17 +77,10 @@
 		123 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		124 /* TaskSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSource.swift; sourceTree = "<group>"; };
 		125 /* TaskDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDestination.swift; sourceTree = "<group>"; };
-		126 /* ObsidianTasksSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianTasksSource.swift; sourceTree = "<group>"; };
 		127 /* TaskNotesSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotesSource.swift; sourceTree = "<group>"; };
 		128 /* RemindersDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersDestination.swift; sourceTree = "<group>"; };
-		129 /* Things3Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Things3Destination.swift; sourceTree = "<group>"; };
-		130 /* UpdaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterService.swift; sourceTree = "<group>"; };
-		131 /* TodoistDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoistDestination.swift; sourceTree = "<group>"; };
-		132 /* TickTickDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickTickDestination.swift; sourceTree = "<group>"; };
-		133 /* OAuthCallbackHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthCallbackHandler.swift; sourceTree = "<group>"; };
 		134 /* CalendarFeedDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeedDestination.swift; sourceTree = "<group>"; };
-		135 /* AsanaDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanaDestination.swift; sourceTree = "<group>"; };
-		136 /* LinearDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearDestination.swift; sourceTree = "<group>"; };
+		42341E212F92A4270045886E /* ObsidianTasksSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianTasksSource.swift; sourceTree = "<group>"; };
 		T00 /* RemindianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		T10 /* TaskParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskParserTests.swift; sourceTree = "<group>"; };
 		T11 /* DeduplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeduplicationTests.swift; sourceTree = "<group>"; };
@@ -105,6 +89,10 @@
 		T14 /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
 		T15 /* WritebackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritebackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		42341E272F92AA0C0045886E /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		200 /* Frameworks */ = {
@@ -127,15 +115,16 @@
 		300 = {
 			isa = PBXGroup;
 			children = (
-				301 /* Remindian */,
+				301 /* Obsync */,
 				309 /* RemindianTests */,
 				302 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		301 /* Remindian */ = {
+		301 /* Obsync */ = {
 			isa = PBXGroup;
 			children = (
+				42341E272F92AA0C0045886E /* Extensions */,
 				101 /* ObsyncApp.swift */,
 				303 /* Views */,
 				304 /* Models */,
@@ -185,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				108 /* ObsidianService.swift */,
-				109 /* RemindersService.swift */,
 				110 /* SyncEngine.swift */,
 				111 /* SyncManager.swift */,
 				114 /* FileBackupService.swift */,
@@ -193,8 +181,6 @@
 				116 /* HotKeyService.swift */,
 				117 /* AuditLog.swift */,
 				121 /* FileWatcherService.swift */,
-				130 /* UpdaterService.swift */,
-				133 /* OAuthCallbackHandler.swift */,
 				307 /* Sources */,
 				308 /* Destinations */,
 			);
@@ -213,8 +199,8 @@
 		307 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				126 /* ObsidianTasksSource.swift */,
 				127 /* TaskNotesSource.swift */,
+				42341E212F92A4270045886E /* ObsidianTasksSource.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -223,12 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				128 /* RemindersDestination.swift */,
-				129 /* Things3Destination.swift */,
-				131 /* TodoistDestination.swift */,
-				132 /* TickTickDestination.swift */,
 				134 /* CalendarFeedDestination.swift */,
-				135 /* AsanaDestination.swift */,
-				136 /* LinearDestination.swift */,
 			);
 			path = Destinations;
 			sourceTree = "<group>";
@@ -251,7 +232,7 @@
 /* Begin PBXNativeTarget section */
 		400 /* Remindian */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 500;
+			buildConfigurationList = 500 /* Build configuration list for PBXNativeTarget "Remindian" */;
 			buildPhases = (
 				401 /* Sources */,
 				200 /* Frameworks */,
@@ -261,6 +242,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				42341E272F92AA0C0045886E /* Extensions */,
+			);
 			name = Remindian;
 			productName = Remindian;
 			productReference = 100 /* Remindian.app */;
@@ -268,7 +252,7 @@
 		};
 		T40 /* RemindianTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = T50;
+			buildConfigurationList = T50 /* Build configuration list for PBXNativeTarget "RemindianTests" */;
 			buildPhases = (
 				T41 /* Sources */,
 				T30 /* Frameworks */,
@@ -291,7 +275,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					400 = {
 						CreatedOnToolsVersion = 15.0;
@@ -302,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 601;
+			buildConfigurationList = 601 /* Build configuration list for PBXProject "ObsidianRemindersSync" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -345,7 +329,6 @@
 				006 /* SyncConfiguration.swift in Sources */,
 				007 /* SyncState.swift in Sources */,
 				008 /* ObsidianService.swift in Sources */,
-				009 /* RemindersService.swift in Sources */,
 				010 /* SyncEngine.swift in Sources */,
 				011 /* SyncManager.swift in Sources */,
 				012 /* FileBackupService.swift in Sources */,
@@ -354,22 +337,15 @@
 				015 /* AuditLog.swift in Sources */,
 				016 /* SyncLog.swift in Sources */,
 				017 /* SyncHistoryView.swift in Sources */,
+				42341E222F92A4270045886E /* ObsidianTasksSource.swift in Sources */,
 				019 /* FileWatcherService.swift in Sources */,
 				020 /* OnboardingView.swift in Sources */,
 				021 /* AboutView.swift in Sources */,
 				022 /* TaskSource.swift in Sources */,
 				023 /* TaskDestination.swift in Sources */,
-				024 /* ObsidianTasksSource.swift in Sources */,
 				025 /* TaskNotesSource.swift in Sources */,
 				026 /* RemindersDestination.swift in Sources */,
-				027 /* Things3Destination.swift in Sources */,
-				028 /* UpdaterService.swift in Sources */,
-				029 /* TodoistDestination.swift in Sources */,
-				030 /* TickTickDestination.swift in Sources */,
-				031 /* OAuthCallbackHandler.swift in Sources */,
 				032 /* CalendarFeedDestination.swift in Sources */,
-				033 /* AsanaDestination.swift in Sources */,
-				034 /* LinearDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +407,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -450,7 +427,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -464,7 +441,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "arm64 x86_64";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -495,6 +471,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -508,7 +485,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -525,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 17;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -553,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 17;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -578,6 +557,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 17;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.tests;
@@ -594,6 +574,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 17;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.remindian.tests;
@@ -616,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		601 /* Build configuration list for PBXProject "Remindian" */ = {
+		601 /* Build configuration list for PBXProject "ObsidianRemindersSync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				700 /* Debug */,
