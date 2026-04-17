@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,7 @@
 		026 /* RemindersDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128 /* RemindersDestination.swift */; };
 		032 /* CalendarFeedDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134 /* CalendarFeedDestination.swift */; };
 		42341E222F92A4270045886E /* ObsidianTasksSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341E212F92A4270045886E /* ObsidianTasksSource.swift */; };
+		42341E2B2F92B1B10045886E /* GlassEffect+Compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341E292F92B1B10045886E /* GlassEffect+Compat.swift */; };
 		T01 /* TaskParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T10 /* TaskParserTests.swift */; };
 		T02 /* DeduplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T11 /* DeduplicationTests.swift */; };
 		T03 /* TaskNotesParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = T12 /* TaskNotesParserTests.swift */; };
@@ -81,6 +82,7 @@
 		128 /* RemindersDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersDestination.swift; sourceTree = "<group>"; };
 		134 /* CalendarFeedDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeedDestination.swift; sourceTree = "<group>"; };
 		42341E212F92A4270045886E /* ObsidianTasksSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianTasksSource.swift; sourceTree = "<group>"; };
+		42341E292F92B1B10045886E /* GlassEffect+Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlassEffect+Compat.swift"; sourceTree = "<group>"; };
 		T00 /* RemindianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		T10 /* TaskParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskParserTests.swift; sourceTree = "<group>"; };
 		T11 /* DeduplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeduplicationTests.swift; sourceTree = "<group>"; };
@@ -89,10 +91,6 @@
 		T14 /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
 		T15 /* WritebackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritebackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		42341E272F92AA0C0045886E /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		200 /* Frameworks */ = {
@@ -124,7 +122,7 @@
 		301 /* Obsync */ = {
 			isa = PBXGroup;
 			children = (
-				42341E272F92AA0C0045886E /* Extensions */,
+				42341E2A2F92B1B10045886E /* Extensions */,
 				101 /* ObsyncApp.swift */,
 				303 /* Views */,
 				304 /* Models */,
@@ -227,6 +225,14 @@
 			path = RemindianTests;
 			sourceTree = "<group>";
 		};
+		42341E2A2F92B1B10045886E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42341E292F92B1B10045886E /* GlassEffect+Compat.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,9 +247,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				42341E272F92AA0C0045886E /* Extensions */,
 			);
 			name = Remindian;
 			productName = Remindian;
@@ -326,6 +329,7 @@
 				003 /* SettingsView.swift in Sources */,
 				004 /* MenuBarView.swift in Sources */,
 				005 /* SyncTask.swift in Sources */,
+				42341E2B2F92B1B10045886E /* GlassEffect+Compat.swift in Sources */,
 				006 /* SyncConfiguration.swift in Sources */,
 				007 /* SyncState.swift in Sources */,
 				008 /* ObsidianService.swift in Sources */,
