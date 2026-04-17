@@ -50,7 +50,7 @@ struct GeneralSettingsView: View {
                             Text(type.displayName).tag(type)
                         }
                     }
-                    .onChange(of: syncManager.config.taskSourceType) { _ in
+                    .onChange(of: syncManager.config.taskSourceType) {
                         syncManager.updateSourceAndDestination()
                     }
 
@@ -60,7 +60,7 @@ struct GeneralSettingsView: View {
                         Label("Calendar Feed", systemImage: "calendar")
                             .tag(SyncConfiguration.TaskDestinationType.calendarFeed)
                     }
-                    .onChange(of: syncManager.config.taskDestinationType) { _ in
+                    .onChange(of: syncManager.config.taskDestinationType) {
                         syncManager.updateSourceAndDestination()
                     }
 
@@ -132,7 +132,7 @@ struct GeneralSettingsView: View {
                     Toggle("Sync on app launch", isOn: $syncManager.config.syncOnLaunch)
 
                     Toggle("Watch vault for changes (real-time sync)", isOn: $syncManager.config.enableFileWatcher)
-                        .onChange(of: syncManager.config.enableFileWatcher) { _ in
+                        .onChange(of: syncManager.config.enableFileWatcher) {
                             syncManager.updateFileWatcher()
                         }
                         .help("Automatically sync when markdown files in your vault are modified")
@@ -225,25 +225,25 @@ struct GeneralSettingsView: View {
 
                 Section {
                     Toggle("Launch at login", isOn: $syncManager.config.launchAtLogin)
-                        .onChange(of: syncManager.config.launchAtLogin) { newValue in
-                            syncManager.updateLaunchAtLogin(newValue)
+                        .onChange(of: syncManager.config.launchAtLogin) {
+                            syncManager.updateLaunchAtLogin(syncManager.config.launchAtLogin)
                         }
                         .help("Automatically start Remindian when you log in")
 
                     Toggle("Hide dock icon", isOn: $syncManager.config.hideDockIcon)
-                        .onChange(of: syncManager.config.hideDockIcon) { _ in
+                        .onChange(of: syncManager.config.hideDockIcon) {
                             syncManager.updateDockIconVisibility()
                         }
                         .help("App will only appear in the menu bar")
 
                     Toggle("Force dark mode", isOn: $syncManager.config.forceDarkIcon)
-                        .onChange(of: syncManager.config.forceDarkIcon) { _ in
+                        .onChange(of: syncManager.config.forceDarkIcon) {
                             syncManager.updateAppIcon()
                         }
                         .help("Forces the app into dark mode regardless of system setting")
 
                     Toggle("Global sync hotkey", isOn: $syncManager.config.globalHotKeyEnabled)
-                        .onChange(of: syncManager.config.globalHotKeyEnabled) { _ in
+                        .onChange(of: syncManager.config.globalHotKeyEnabled) {
                             syncManager.updateHotKey()
                         }
                         .help("Register a global keyboard shortcut to trigger sync from any app")
@@ -537,7 +537,7 @@ struct TaskNotesSettingsView: View {
                         .pickerStyle(.segmented)
                         .frame(width: 280)
                     }
-                    .onChange(of: syncManager.config.taskNotesIntegrationMode) { _ in
+                    .onChange(of: syncManager.config.taskNotesIntegrationMode) {
                         syncManager.updateSourceAndDestination()
                     }
 
@@ -583,7 +583,7 @@ struct TaskNotesSettingsView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .frame(maxWidth: .infinity)
                         }
-                        .onChange(of: syncManager.config.taskNotesApiUrl) { _ in
+                        .onChange(of: syncManager.config.taskNotesApiUrl) {
                             syncManager.updateSourceAndDestination()
                         }
                     }

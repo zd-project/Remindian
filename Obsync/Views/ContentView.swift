@@ -5,6 +5,7 @@ import SwiftUI
 /// Opens the Settings window reliably, even when running as menu bar accessory.
 /// Always creates the window programmatically — the native Settings scene +
 /// sendAction("showSettingsWindow:") returns true but doesn't display on macOS 26.
+@MainActor
 func openNativeSettingsWindow() {
     // Temporarily become a regular app so we can present windows
     let wasAccessory = NSApp.activationPolicy() == .accessory

@@ -159,10 +159,10 @@ struct OnboardingView: View {
                 }
             }
             .padding(.horizontal, 30)
-            .onChange(of: syncManager.config.taskSourceType) { _ in
+            .onChange(of: syncManager.config.taskSourceType) {
                 syncManager.updateSourceAndDestination()
             }
-            .onChange(of: syncManager.config.taskDestinationType) { _ in
+            .onChange(of: syncManager.config.taskDestinationType) {
                 syncManager.updateSourceAndDestination()
             }
 
